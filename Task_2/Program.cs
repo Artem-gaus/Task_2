@@ -14,12 +14,18 @@ namespace Task_2
         {
             Node root = null;
             BinaryTree tree = new BinaryTree();
-            int[] fill = new int[] {10, 3, 15, 28, 4, -15, 2, 56 }; 
+            int[] fill = new int[] { 10, 3, 15, 28, 4, -15, 2, 56 }; 
 
             for (int i = 0; i < fill.Length; i++)
             {
                 root = tree.Insert(root, fill[i]);
             }
+
+            DFS dfs = new DFS();
+            dfs.DepthFirstSearch(root);
+
+            BFS bfs = new BFS();
+            bfs.AcrossFirstSearch(root);
 
             Console.ReadKey();
         }
