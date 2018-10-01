@@ -18,17 +18,29 @@ namespace Task_2
         {
             Queue<Node> queue = new Queue<Node>();
             queue.Enqueue(root);
-            ResultListValue += root.Value.ToString() + ",  ";
+            ResultListValue += root.Student.Name.ToString() + Environment.NewLine
+                    + root.Student.TestTitle.ToString() + Environment.NewLine
+                    + root.Student.TestResult.ToString() + Environment.NewLine
+                    + root.Student.Data.ToString() + Environment.NewLine
+                    + Environment.NewLine;
             while (queue.Count != 0)
             {
                 if (queue.Peek().LeftNode != null)
                 {
-                    ResultListValue += queue.Peek().LeftNode.Value.ToString() + ",  ";
+                    ResultListValue += queue.Peek().LeftNode.Student.Name.ToString() + Environment.NewLine
+                        + queue.Peek().LeftNode.Student.TestTitle.ToString() + Environment.NewLine
+                        + queue.Peek().LeftNode.Student.TestResult.ToString() + Environment.NewLine
+                        + queue.Peek().LeftNode.Student.Data.ToString() + Environment.NewLine
+                        + Environment.NewLine;
                     queue.Enqueue(queue.Peek().LeftNode);
                 }
                 if (queue.Peek().RightNode != null)
                 {
-                    ResultListValue += queue.Peek().RightNode.Value.ToString() + ",  ";
+                    ResultListValue += queue.Peek().RightNode.Student.Name.ToString() + Environment.NewLine
+                        + queue.Peek().RightNode.Student.TestTitle.ToString() + Environment.NewLine
+                        + queue.Peek().RightNode.Student.TestResult.ToString() + Environment.NewLine
+                        + queue.Peek().RightNode.Student.Data.ToString() + Environment.NewLine
+                        + Environment.NewLine;
                     queue.Enqueue(queue.Peek().RightNode);
                 }
                 queue.Dequeue();

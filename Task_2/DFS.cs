@@ -20,7 +20,11 @@ namespace Task_2
         {
             if (root != null)
             {
-                ResultListValue += root.Value.ToString() + ",  ";
+                ResultListValue += root.Student.Name.ToString() + Environment.NewLine
+                    + root.Student.TestTitle.ToString() + Environment.NewLine
+                    + root.Student.TestResult.ToString() + Environment.NewLine
+                    + root.Student.Data.ToString() + Environment.NewLine
+                    + Environment.NewLine;
                 CLR(root.LeftNode);
                 CLR(root.RightNode);
             }

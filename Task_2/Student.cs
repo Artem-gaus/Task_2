@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Task_2
 {
-    class Node
+    class Student
     {
-        public Student Student;
-        public Node LeftNode;
-        public Node RightNode;
+        public string Name;
+        public string TestTitle;
+        public int TestResult;
+        public DateTime Data;
     }
 }

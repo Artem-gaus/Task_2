@@ -14,11 +14,15 @@ namespace Task_2
         {
             Node root = null;
             BinaryTree tree = new BinaryTree();
-            int[] fill = new int[] { 10, 3, 15, 28, 4, -15, 2, 56 }; 
+            Student[] students = new Student[] {
+                new Student { Name = "Tolik", TestResult = 150, TestTitle = "Science", Data = new DateTime(2018, 10, 15) },
+                new Student { Name = "Andrey", TestResult = 160, TestTitle = "Tech science", Data = new DateTime(2018, 9, 4) },
+                new Student { Name = "Slava", TestResult = 195, TestTitle = "Electronic", Data = new DateTime(2018, 10, 3) }
+            };
 
-            for (int i = 0; i < fill.Length; i++)
+            for (int i = 0; i < students.Length; i++)
             {
-                root = tree.Insert(root, fill[i]);
+                root = tree.Insert(root, students[i]);
             }
 
             DFS dfs = new DFS();
@@ -26,6 +30,8 @@ namespace Task_2
 
             BFS bfs = new BFS();
             bfs.AcrossFirstSearch(root);
+
+            tree.RemoveTree(ref root);
 
             Console.ReadKey();
         }
