@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,30 @@ using System.Threading.Tasks;
 
 namespace Task_2
 {
-    class BinaryTree
+    class BinaryTree : IEnumerable<Node>
     {
+        Node root;
+        public IEnumerator<Node> GetEnumerator()
+        {
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(root);
+
+            while (queue.Count != 0)
+            {
+                if (queue.Peek().LeftNode != null)
+                {
+                    queue.Enqueue(queue.Peek().LeftNode);
+                }
+                if (queue.Peek().RightNode != null)
+                {
+                    queue.Enqueue(queue.Peek().RightNode);
+                }
+                yield return queue.Dequeue();
+            }
+        }
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+
+
         public Node Insert(Node root, Student student)
         {
             if (root == null)
@@ -20,6 +43,7 @@ namespace Task_2
             else
                 root.RightNode = Insert(root.RightNode, student);
 
+            this.root = root;
             return root;
         }
         public void RemoveTree(ref Node root)
@@ -34,5 +58,6 @@ namespace Task_2
                 root = null;
             }
         }
+
     }
 }

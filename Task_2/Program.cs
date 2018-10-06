@@ -24,6 +24,10 @@ namespace Task_2
             {
                 root = tree.Insert(root, students[i]);
             }
+            foreach (Node item in tree)
+            {
+                Console.WriteLine("name: {0}", item.Student.Name);
+            }
 
             DFS dfs = new DFS();
             dfs.DepthFirstSearch(root);
