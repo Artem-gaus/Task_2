@@ -14,6 +14,11 @@ namespace Task_2
         {
             Node root = null;
             BinaryTree tree = new BinaryTree();
+
+            Subscriber subscriber = new Subscriber();
+            tree.promoterAdded += subscriber.SpeakerAddition;
+            tree.promoterDelete += subscriber.SpeakerRemoval;
+
             Student[] students = new Student[] {
                 new Student { Name = "Tolik", TestResult = 150, TestTitle = "Science", Data = new DateTime(2018, 10, 15) },
                 new Student { Name = "Andrey", TestResult = 160, TestTitle = "Tech science", Data = new DateTime(2018, 9, 4) },
@@ -36,6 +41,15 @@ namespace Task_2
             bfs.AcrossFirstSearch(root);
 
             tree.RemoveTree(ref root);
+
+            //Task_2
+            //NamedIterator
+
+            ArrayWithAnyRangeIndex MyArray = new ArrayWithAnyRangeIndex();
+            foreach (var item in MyArray.GetArrayBySetRange(2, 4))
+            {
+                Console.WriteLine(item + " ");
+            }
 
             Console.ReadKey();
         }

@@ -9,7 +9,11 @@ namespace Task_2
 {
     class BinaryTree : IEnumerable<Node>
     {
-        Node root;
+        public delegate void MethodContainer();
+        public event MethodContainer promoterDelete;
+        public event MethodContainer promoterAdded;
+
+        private Node root;
         public IEnumerator<Node> GetEnumerator()
         {
             Queue<Node> queue = new Queue<Node>();
@@ -33,6 +37,7 @@ namespace Task_2
 
         public Node Insert(Node root, Student student)
         {
+            Node currentRoot = root;
             if (root == null)
             {
                 root = new Node();
@@ -42,6 +47,9 @@ namespace Task_2
                 root.LeftNode = Insert(root.LeftNode, student);
             else
                 root.RightNode = Insert(root.RightNode, student);
+
+            if (currentRoot != root)
+                promoterAdded();
 
             this.root = root;
             return root;
@@ -57,6 +65,8 @@ namespace Task_2
 
                 root = null;
             }
+
+            promoterDelete();
         }
 
     }
