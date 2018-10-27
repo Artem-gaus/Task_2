@@ -9,14 +9,14 @@ namespace Task_2
     class BFS
     {
         private static string ResultListValue { set; get; }
-        public void AcrossFirstSearch(Node root)
+        public void AcrossFirstSearch(Node<Student> root)
         {
             Across(root);
             Print();
         }
-        private void Across(Node root)
+        private void Across(Node<Student> root)
         {
-            Queue<Node> queue = new Queue<Node>();
+            Queue<Node<Student>> queue = new Queue<Node<Student>>();
             queue.Enqueue(root);
             ResultListValue += root.Student.Name.ToString() + Environment.NewLine
                     + root.Student.TestTitle.ToString() + Environment.NewLine

@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Task_2
 {
-    class BinaryTree : IEnumerable<Node>
+    class BinaryTree : IEnumerable<Node<Student>>
     {
         public delegate void MethodContainer();
         public event MethodContainer promoterDelete;
         public event MethodContainer promoterAdded;
 
-        private Node root;
-        public IEnumerator<Node> GetEnumerator()
+        private Node<Student> root;
+        public IEnumerator<Node<Student>> GetEnumerator()
         {
-            Queue<Node> queue = new Queue<Node>();
+            Queue<Node<Student>> queue = new Queue<Node<Student>>();
             queue.Enqueue(root);
 
             while (queue.Count != 0)
@@ -35,12 +35,12 @@ namespace Task_2
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 
-        public Node Insert(Node root, Student student)
+        public Node<Student> Insert(Node<Student> root, Student student)
         {
-            Node currentRoot = root;
+            Node<Student> currentRoot = root;
             if (root == null)
             {
-                root = new Node();
+                root = new Node<Student>();
                 root.Student = student;
             }
             else if (student.TestResult < root.Student.TestResult)
@@ -54,7 +54,7 @@ namespace Task_2
             this.root = root;
             return root;
         }
-        public void RemoveTree(ref Node root)
+        public void RemoveTree(ref Node<Student> root)
         {
             if (root != null)
             {

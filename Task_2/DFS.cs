@@ -10,13 +10,13 @@ namespace Task_2
     {
         //Perambulation in depth
         private static string ResultListValue { set; get; }
-        public void DepthFirstSearch(Node root)
+        public void DepthFirstSearch(Node<Student> root)
         {
             CLR(root);
             Print();
         }
         //Center Left Right
-        private void CLR(Node root)
+        private void CLR(Node<Student> root)
         {
             if (root != null)
             {

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Task_2
 {
-    class Node
+    class Node<T>
     {
-        public Student Student;
-        public Node LeftNode;
-        public Node RightNode;
+        public T Student;
+        public Node<T> LeftNode;
+        public Node<T> RightNode;
     }
 }

@@ -12,7 +12,7 @@ namespace Task_2
         //last step is add DLL lib and move there
         static void Main(string[] args)
         {
-            Node root = null;
+            Node<Student> root = null;
             BinaryTree tree = new BinaryTree();
 
             Subscriber subscriber = new Subscriber();
@@ -29,7 +29,7 @@ namespace Task_2
             {
                 root = tree.Insert(root, students[i]);
             }
-            foreach (Node item in tree)
+            foreach (Node<Student> item in tree)
             {
                 Console.WriteLine("name: {0}", item.Student.Name);
             }
