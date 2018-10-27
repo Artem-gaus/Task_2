@@ -44,8 +44,8 @@ namespace Task_2
 
             //Task_2
             //NamedIterator
-
-            ArrayWithAnyRangeIndex MyArray = new ArrayWithAnyRangeIndex();
+            int[] testArray = new int[] { 1, 2, 3, 4, 5, 6 };
+            ArrayWithAnyRangeIndex<int> MyArray = new ArrayWithAnyRangeIndex<int>(testArray);
             foreach (var item in MyArray.GetArrayBySetRange(2, 4))
             {
                 Console.WriteLine(item + " ");

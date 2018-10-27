@@ -3,12 +3,13 @@ using System.Collections;
 
 namespace Task_2
 {
-    class ArrayWithAnyRangeIndex
+    class ArrayWithAnyRangeIndex<T>
     {
-        private int[] AnyArray;
-        public ArrayWithAnyRangeIndex()
+        private T[] anyArray;
+
+        public ArrayWithAnyRangeIndex(T[] anyArray)
         {
-            AnyArray = new int[] { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 84 };
+            this.anyArray = anyArray;
         }
 
         public IEnumerable GetArrayBySetRange(int start, int end)
@@ -25,10 +26,10 @@ namespace Task_2
 
             for (int i = start; i < end; i++)
             {
-                if (i >= AnyArray.Length)
+                if (i >= anyArray.Length)
                     yield break;
 
-                yield return AnyArray[i];
+                yield return anyArray[i];
             }
         }
     }
