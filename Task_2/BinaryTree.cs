@@ -9,11 +9,13 @@ namespace Task_2
 {
     class BinaryTree : IEnumerable<Node<Student>>
     {
+        private Node<Student> root;
+        private Student[] localStudentsArray;
+
         public delegate void MethodContainer();
         public event MethodContainer promoterDelete;
         public event MethodContainer promoterAdded;
 
-        private Node<Student> root;
         public IEnumerator<Node<Student>> GetEnumerator()
         {
             Queue<Node<Student>> queue = new Queue<Node<Student>>();
@@ -34,8 +36,26 @@ namespace Task_2
         }
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
+        public Node<Student> AddItems(Node<Student> rootNode, Student[] students)
+        {
+            localStudentsArray = students;
+            for (int i = 0; i < students.Length; i++)
+            {
+                rootNode = Insert(rootNode, students[i]);
+            }
+            return rootNode;
+        }
 
-        public Node<Student> Insert(Node<Student> root, Student student)
+        public void DisplaySortedStudents()
+        {
+            Array.Sort(localStudentsArray);
+            Console.WriteLine("\nSorted students array by Test result");
+            foreach (var item in localStudentsArray)
+                Console.WriteLine(item.Name + " " + item.TestResult);
+            Console.WriteLine("");
+        }
+
+        protected Node<Student> Insert(Node<Student> root, Student student)
         {
             Node<Student> currentRoot = root;
             if (root == null)

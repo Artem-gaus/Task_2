@@ -8,8 +8,6 @@ namespace Task_2
 {
     class Program
     {
-        //fist we going implement in this project
-        //last step is add DLL lib and move there
         static void Main(string[] args)
         {
             Node<Student> root = null;
@@ -24,11 +22,12 @@ namespace Task_2
                 new Student { Name = "Andrey", TestResult = 160, TestTitle = "Tech science", Data = new DateTime(2018, 9, 4) },
                 new Student { Name = "Slava", TestResult = 195, TestTitle = "Electronic", Data = new DateTime(2018, 10, 3) }
             };
+            root = tree.AddItems(root, students);
 
-            for (int i = 0; i < students.Length; i++)
-            {
-                root = tree.Insert(root, students[i]);
-            }
+            //use Sort array whith help implement IComparable<T>
+            tree.DisplaySortedStudents();
+            
+            //we can use "foreach" loop
             foreach (Node<Student> item in tree)
             {
                 Console.WriteLine("name: {0}", item.Student.Name);
