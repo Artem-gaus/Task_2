@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task_2
+namespace Task_2_Part_1
 {
-    class BinaryTree : IEnumerable<Node<Student>>
+    public class BinaryTree : IEnumerable<Node<Student>>
     {
         private Node<Student> root;
         private Student[] localStudentsArray;

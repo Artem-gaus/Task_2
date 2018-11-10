@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{748AF7F3-1F26-45F9-9436-AF747D4B2BB5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Task_2</RootNamespace>
-    <AssemblyName>Task_2</AssemblyName>
+    <ProjectGuid>{D3A38EF2-B5DB-4376-917E-AC74AC8343A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Task_2_Part_2</RootNamespace>
+    <AssemblyName>Task_2_Part_2</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ArrayWithAnyRangeIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Task_2_Part_1\Task_2_Part_1.csproj">
-      <Project>{8C73D1FF-7D79-45BE-9DAD-978DBF3BD867}</Project>
-      <Name>Task_2_Part_1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Task_2_Part_2\Task_2_Part_2.csproj">
-      <Project>{D3A38EF2-B5DB-4376-917E-AC74AC8343A6}</Project>
-      <Name>Task_2_Part_2</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

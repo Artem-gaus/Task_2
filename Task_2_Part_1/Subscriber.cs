@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task_2
+namespace Task_2_Part_1
 {
-    class Subscriber
+    public class Subscriber
     {
         public void SpeakerAddition() => Console.WriteLine("The node has be added");
         public void SpeakerRemoval() => Console.WriteLine("The node has be removed");

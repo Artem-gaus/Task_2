@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task_2_Part_1;
+using Task_2_Part_2;
 
 namespace Task_2
 {
