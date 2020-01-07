@@ -1,4 +1,4 @@
 master first string
 master second string
 master therd string
-master string for merged conflict
+feature/rebase2 string for merge conflict
