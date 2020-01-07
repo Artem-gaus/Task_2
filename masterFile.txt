@@ -1,1 +1,2 @@
 master first string
+master second string
