@@ -2,4 +2,4 @@ master first string
 master second string
 master therd string
 master string for merged conflict
-text1
+text11
