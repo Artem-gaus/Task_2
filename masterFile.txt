@@ -3,4 +3,4 @@ master second string
 master therd string
 master string for merged conflict
 text11
-test merge via git merge second
+test merge via git merge second+
