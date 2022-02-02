@@ -3,3 +3,4 @@ Hot fix in release branch
 new line 1
 new line 2
 +
++
